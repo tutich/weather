@@ -5,7 +5,7 @@ import WeatherApp from './component/Weather';
 function App() {
   return (
     <div className="App">
-      
+      <p>Good evening</p>
       <input 
       type='text'
       placeholder='Enter Location'
