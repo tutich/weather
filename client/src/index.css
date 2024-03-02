@@ -1,5 +1,7 @@
 body {
- background: #D3D8D4;
+ /* background: #D3D8D4; */
+ background: linear-gradient(to right, #e6dada, #274046);
+ 
 }
 
 code {

@@ -1,4 +1,31 @@
 import React, { useState, useEffect } from 'react';
+  
+//   {
+//     "coord":{"lon":36.8167,"lat":-1.2833},
+//     "weather":[{"id":803,"main":"Clouds","description":"broken clouds","icon":"04d"}],
+//     "base":"stations",
+//     "main":{"temp":293.77,"feels_like":293.92,"temp_min":293.77,"temp_max":297.02,"pressure":1024,"humidity":78},
+//     "visibility":10000,
+//     "wind":{"speed":5.14,"deg":50},
+//     "clouds":{"all":75},
+//     "dt":1709362639,
+//     "sys":{"type":1,"id":2543,"country":"KE","sunrise":1709350861,"sunset":1709394539},
+//     "timezone":10800,"id":184745,"name":"Nairobi","cod":200
+//  }
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
 import { WiDaySunny, WiCloudy, WiRain, WiSnow } from 'react-icons/wi';
 
 const WeatherApp = () => {
