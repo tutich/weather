@@ -1,6 +1,7 @@
 body {
  /* background: #D3D8D4; */
  background: linear-gradient(to right, #e6dada, #274046);
+ font-family: 'Outfit', 'Segoe UI', 'Roboto', 'Oxygen',
  
 }
 
@@ -8,3 +9,61 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.search {
+  display: flex;
+  justify-content: center;
+  gap: 4em;
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  width: 90%;
+  margin: 1rem auto;
+  padding: 1rem;
+  border-radius: 12px;
+  background-color: rgba(255,255,255, 0.2);
+}
+
+.inp {
+  padding: 10px;
+  gap: 0.5em;
+}
+input {
+  padding: .7rem 1rem;
+  font-size: 1.2rem;
+  border-radius: 25px;
+  border: 1px solid rgba(255,255,255, 0.8);
+  background: rgba(255,255,255, 0.1);
+  color: #f8f8f8;
+  margin-right: 10px;
+}
+ button {
+  padding: .4rem .5rem;
+  font-size: 1.2rem;
+  border-radius: 25px;
+  border: 1px solid rgba(255,255,255, 0.8);
+  background: rgba(255,255,255, 0.1);
+  color: #f8f8f8;
+  cursor: pointer;
+ }
+ .bold {
+  font-weight: bold;
+  
+ }
+ .intro {
+  font-weight: 700;
+  color: #e6dadaf8;
+  font-size: 20px;
+ }
+
+ @media only screen and (max-width : 768px) {
+  input {
+    width: 65%;
+  }
+ }
