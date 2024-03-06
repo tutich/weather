@@ -4,6 +4,7 @@ import WeatherApp from './component/Weather';
 import axios from 'axios';
 import { useState } from 'react';
 import {SearchOutlined} from '@ant-design/icons'
+import { useEffect } from 'react';
 import sun from './images/sunrain.jpg'
 
 
@@ -13,7 +14,36 @@ function App() {
  const [search, setSearch] = useState('');
 
 
- const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=6ce75aae0419343244e05ec2db4be0df`
+ const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=6ce75aae0419343244e05ec2db4be0df`;
+
+ const fetchWeatherByGeolocation = (latitude, longitude) => {
+  const geolocationUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=6ce75aae0419343244e05ec2db4be0df`;
+  axios
+    .get(geolocationUrl)
+    .then((response) => {
+      setData(response.data);
+    })
+    .catch((error) => {
+      console.error('Error fetching data:', error);
+    });
+ };
+ useEffect(() => {
+  // Get geolocation of the user
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        const { latitude, longitude } = position.coords;
+        fetchWeatherByGeolocation(latitude, longitude);
+      },
+      (error) => {
+        console.error('Error getting geolocation:', error);
+      }
+    );
+  } else {
+    console.error('Geolocation is not supported by this browser.');
+  }
+}, []);
+
  const searchLocation = (event) => {
  if(event.key === 'Enter') {
   axios.get(url)
@@ -50,7 +80,7 @@ function App() {
     <div className="App">
       <div class="container">
         <div class="head">
-          <p className='intro'>Hey John</p>
+          <p className='intro'>Hey </p>
           <div class="inp">
             <input
             type='text'
